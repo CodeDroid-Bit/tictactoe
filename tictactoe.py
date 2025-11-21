@@ -1,5 +1,6 @@
 
 import pygame
+import sys
 pygame.init()
 
 SCREEN_WIDTH = 600
@@ -30,13 +31,13 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-            
-    tictactoe_board(line1,line2,line3,line4)
 
-    if event.type == pygame.MOUSEBUTTONDOWN:
+        tictactoe_board(line1,line2,line3,line4)
+
+        if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
                 print(f"left button clicked at position: {event.pos}")
-
+                
     pygame.display.flip()
 pygame.quit()
 sys.exit()
